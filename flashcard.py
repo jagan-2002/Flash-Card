@@ -18,7 +18,7 @@ st.subheader('Generate FlashCard')
 os.environ['Groq_API_KEY'] = os.getenv("Groq_API_KEY")
 
 GROQ_API_KEY = os.getenv("Groq_API_KEY")
-model = ChatGroq(model = "Deepseek-R1-Distill-Llama-70b", groq_api_key = GROQ_API_KEY )
+model = ChatGroq(model = "Deepseek-R1-Distill-Llama-70b", groq_api_key = st.secrets["Groq_API_KEY"] )
 
 uploaded_files = st.file_uploader("Upload PDF documents", type=["pdf"], accept_multiple_files=True)
 
